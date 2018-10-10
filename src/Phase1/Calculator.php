@@ -22,6 +22,7 @@ class Calculator
             "root",
             "pehapkari"
         );
+
         $this->database->connect();
     }
 

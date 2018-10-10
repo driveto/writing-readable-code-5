@@ -35,7 +35,7 @@
         </form>
 
         <div class="jumbotron">
-            <h1><?php include "calc.php"; ?></h1>
+            <h1><?php include "calc1.php"; ?></h1>
         </div>
     </main>
 
