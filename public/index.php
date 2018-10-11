@@ -29,7 +29,7 @@
             </div>
             <div class="form-group">
                 <label for="distance">Vzdálenost</label>
-                <input type="text" name="distance" class="form-control" id="distance">
+                <input type="text" name="distance" class="form-control" id="distance" value="<?=round($_GET['distance'], 2)?>">
             </div>
             <button type="submit" name="submit" class="btn btn-primary">Spočítat</button>
         </form>

@@ -28,12 +28,8 @@ class Calculator
 
     public function calculateCostForTrip(int $carId, int $distanceInKm): float {
         $carResult = $this->database->select('SELECT `mpg` FROM cars WHERE `id`=?', [$carId]);
+        $literPer100Km = $this->calculateMpgToLitres($carResult);
 
-        $milesPerGallon = $carResult['mpg'];
-        $kmPerGallon = $milesPerGallon * self::MILE_TO_KM_RATIO;
-        $kmPerLiter = $kmPerGallon * (1/self::GALLON_TO_LITRE_RATIO);
-        $literPerKm = self::GALLON_TO_LITRE_RATIO / ($kmPerLiter * self::GALLON_TO_LITRE_RATIO);
-        $literPer100Km = $literPerKm * 100;
 
         $fuelPricelist = file_get_contents("http://private-0dc60-driveto1.apiary-mock.com/pricelist");
         $fuelPricelistJson = json_decode($fuelPricelist, true);
@@ -43,4 +39,15 @@ class Calculator
 
         return $costOfGasolinePerKm * $distanceInKm;
     }
+
+    private function calculateMpgToLitres($carResult): float
+    {
+        $milesPerGallon = $carResult['mpg'];
+        $kmPerGallon = $milesPerGallon * self::MILE_TO_KM_RATIO;
+        $kmPerLiter = $kmPerGallon * (1/self::GALLON_TO_LITRE_RATIO);
+        $literPerKm = self::GALLON_TO_LITRE_RATIO / ($kmPerLiter * self::GALLON_TO_LITRE_RATIO);
+
+        return $literPerKm * 100;
+    }
+
 }

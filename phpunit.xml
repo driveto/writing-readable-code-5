@@ -19,6 +19,12 @@
 		<testsuite name="all">
 			<directory>tests</directory>
 		</testsuite>
+		<testsuite name="ph3">
+			<directory>tests/Phase3</directory>
+		</testsuite>
+		<testsuite name="ph4">
+			<directory>tests/Phase4</directory>
+		</testsuite>
 	</testsuites>
 </phpunit>
 

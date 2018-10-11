@@ -1,0 +1,12 @@
+{
+    "gasoline": {
+        "name": "Gasoline",
+        "price": 31.9,
+        "currency": "CZK"
+    },
+    "diesel": {
+        "name": "Diesel",
+        "price": 30.5,
+        "currency": "CZK"
+    }
+}

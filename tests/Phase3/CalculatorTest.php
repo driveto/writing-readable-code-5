@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Tests\Phase3;
-
 
 use App\Phase3\Calculator;
 use App\Phase3\Car;
@@ -15,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 
 class CalculatorTest extends TestCase
 {
-     public function testCalculateCostForTrip()
+    public function testCalculateCostForTrip()
     {
         /** @var CarRepository|MockObject $carRepositoryMock */
         $carRepositoryMock = self::createMock(CarRepository::class);
